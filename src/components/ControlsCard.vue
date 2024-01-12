@@ -3,8 +3,8 @@
     <FormItem
       label="Size"
       :value="styles.size"
-      :min="50"
-      :max="300"
+      :min="size.min"
+      :max="size.max"
       type="range"
       @changeInput="updateStyle('size', $event)"
     >
@@ -16,8 +16,8 @@
     <FormItem
       label="Radius"
       :value="styles.radius"
-      :min="0"
-      :max="200"
+      :min="radius.min"
+      :max="radius.max"
       type="range"
       @changeInput="updateStyle('radius', $event)"
     >
@@ -44,8 +44,8 @@
     <FormItem
       label="Distance"
       :value="styles.distance"
-      :min="-50"
-      :max="50"
+      :min="distance.min"
+      :max="distance.max"
       type="range"
       @changeInput="updateStyle('distance', $event)"
     >
@@ -57,8 +57,8 @@
     <FormItem
       label="Blur"
       :value="styles.blur"
-      :min="0"
-      :max="100"
+      :min="blur.min"
+      :max="blur.max"
       type="range"
       @changeInput="updateStyle('blur', $event)"
     >
@@ -72,4 +72,7 @@
 <script setup lang="ts">
 import { styles, updateStyle } from '@/states/styles'
 import FormItem from './FormItem.vue'
+import { RANGE_VALUES } from '@/globals'
+
+const { blur, distance, radius, size } = RANGE_VALUES
 </script>

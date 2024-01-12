@@ -1,6 +1,8 @@
 <template>
-  <div class="p-5 border flex items-center justify-center">
-    <div class="card-preview box-shadow-base border-radius-base"></div>
+  <div class="p-5 flex items-center self-center mx-auto border h-fit w-fit">
+    <div class="card-preview flex items-center justify-center">
+      <div class="form-label">Preview</div>
+    </div>
   </div>
 </template>
 
