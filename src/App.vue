@@ -3,7 +3,7 @@
     <div class="container mx-auto px-6 flex flex-col">
       <NavBar />
       <div class="my-auto">
-        <div class="grid grid-cols-2 gap-3">
+        <div class="grid grid-cols-2 gap-12 mb-6">
           <BoxCard />
           <ControlsCard />
         </div>

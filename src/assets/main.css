@@ -11,17 +11,74 @@
   --blur: 10;
 }
 
-.card-preview {
-  width: calc(var(--size) * var(--unit));
-  height: calc(var(--size) * var(--unit));
-  border-radius: calc(var(--radius) * var(--unit));
-  box-shadow: calc(var(--distance) * var(--unit)) calc(var(--distance) * var(--unit))
-    calc(var(--blur) * var(--unit)) var(--color); /* x y blur color */
-}
-
+/* start forms styles */
 .form-label {
-  @apply text-sm font-bold mb-1 block;
+  @apply text-sm font-semibold mb-1 block uppercase;
 }
 .form-group {
   @apply mb-4;
+}
+.form-input-text {
+  @apply block w-full border border-gray-300 rounded-md py-2 px-3 text-sm leading-normal focus:outline-none focus:border-gray-600;
+}
+.form-input-color {
+  @apply block p-1 h-10 w-12 bg-white border border-gray-300 rounded-md cursor-pointer;
+}
+
+.badge {
+  @apply inline-block px-2 py-1 text-xs leading-tight rounded-lg bg-slate-500 text-white capitalize;
+}
+
+/********** Range Input Styles **********/
+/*Range Reset*/
+.form-input-range {
+  @apply w-full cursor-pointer bg-transparent appearance-none;
+}
+/* Removes default focus */
+.form-input-range:focus {
+  @apply outline-none;
+}
+/***** Chrome, Safari, Opera and Edge Chromium styles *****/
+/* slider track */
+.form-input-range::-webkit-slider-runnable-track {
+  @apply rounded h-2 bg-gray-300;
+}
+/* slider thumb */
+.form-input-range::-webkit-slider-thumb {
+  @apply bg-gray-600 border border-gray-300 rounded-md appearance-none -mt-2 h-6 w-4;
+}
+.form-input-range:focus::-webkit-slider-thumb {
+  @apply !border-4 border-gray-600;
+}
+/******** Firefox styles ********/
+/* slider track */
+.form-input-range::-moz-range-track {
+  @apply rounded h-2 bg-gray-300;
+}
+/* slider thumb */
+.form-input-range::-moz-range-thumb {
+  @apply bg-gray-600 border border-gray-300 rounded-md appearance-none -mt-2 h-6 w-4;
+}
+.form-input-range:focus::-moz-range-thumb {
+  @apply !border-4 border-gray-600;
+}
+/* end form styles */
+
+/* start cards styles */
+.card {
+  @apply bg-white shadow-lg rounded-lg py-6 px-8;
+}
+.card-preview {
+  width: calc(var(--size) * var(--unit));
+  height: calc(var(--size) * var(--unit));
+}
+/* end cards styles */
+
+/* start controls classes */
+.box-shadow-base {
+  box-shadow: calc(var(--distance) * var(--unit)) calc(var(--distance) * var(--unit))
+    calc(var(--blur) * var(--unit)) var(--color); /* x y blur color */
+}
+.border-radius-base {
+  border-radius: calc(var(--radius) * var(--unit));
 }

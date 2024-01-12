@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4">
+  <div class="card box-shadow-base">
     <FormItem
       label="Size"
       :value="styles.size"
@@ -7,7 +7,11 @@
       :max="300"
       type="range"
       @changeInput="updateStyle('size', $event)"
-    />
+    >
+      <template #label-content>
+        <span class="badge">{{ styles.size }}px</span>
+      </template>
+    </FormItem>
 
     <FormItem
       label="Radius"
@@ -16,7 +20,11 @@
       :max="200"
       type="range"
       @changeInput="updateStyle('radius', $event)"
-    />
+    >
+      <template #label-content>
+        <span class="badge">{{ styles.radius }}px</span>
+      </template>
+    </FormItem>
 
     <div class="flex items-end gap-3">
       <FormItem
@@ -25,7 +33,12 @@
         type="color"
         @changeInput="updateStyle('color', $event)"
       />
-      <FormItem :value="styles.color" type="text" @changeInput="updateStyle('color', $event)" />
+      <FormItem
+        :value="styles.color"
+        placeholder="#eeeeee"
+        type="text"
+        @changeInput="updateStyle('color', $event)"
+      />
     </div>
 
     <FormItem
@@ -35,7 +48,11 @@
       :max="50"
       type="range"
       @changeInput="updateStyle('distance', $event)"
-    />
+    >
+      <template #label-content>
+        <span class="badge">{{ styles.distance }}px</span>
+      </template>
+    </FormItem>
 
     <FormItem
       label="Blur"
@@ -44,7 +61,11 @@
       :max="100"
       type="range"
       @changeInput="updateStyle('blur', $event)"
-    />
+    >
+      <template #label-content>
+        <span class="badge">{{ styles.blur }}px</span>
+      </template>
+    </FormItem>
   </div>
 </template>
 

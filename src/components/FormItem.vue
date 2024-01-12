@@ -1,6 +1,10 @@
 <template>
   <div class="form-group">
-    <label :for="props.value" class="form-label" v-if="props.label">{{ props.label }}</label>
+    <div class="form-label !flex items-center flex-wrap gap-2">
+      <label :for="props.value" v-if="props.label">{{ props.label }}</label>
+      <slot name="label-content" />
+    </div>
+
     <input
       :id="props.label ? formId : undefined"
       :value="props.value"
@@ -8,6 +12,7 @@
       :min="props.min"
       :max="props.max"
       :class="formClass"
+      :placeholder="props.placeholder"
       @input="emit('changeInput', ($event.target as HTMLInputElement).value)"
     />
   </div>
@@ -21,6 +26,9 @@ const props = defineProps({
     type: String
   },
   value: {
+    type: String
+  },
+  placeholder: {
     type: String
   },
   type: {
@@ -42,10 +50,10 @@ const emit = defineEmits(['changeInput'])
 const formId = computed(() => `form-${props.label?.toLowerCase()?.replace(' ', '-')}`)
 
 const formClass = computed(() => [
-  'form-input',
   {
     'form-input-color': props.type === 'color',
-    'form-input-range': props.type === 'range'
+    'form-input-range': props.type === 'range',
+    'form-input-text': props.type === 'text'
   }
 ])
 </script>
