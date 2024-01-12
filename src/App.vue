@@ -7,7 +7,7 @@
           <BoxCard />
           <ControlsCard />
         </div>
-        <div class="flex justify-center w-auto sticky bottom-0">
+        <div class="flex justify-center w-auto sticky bottom-2">
           <HighlightCode :code="code" />
         </div>
       </div>
