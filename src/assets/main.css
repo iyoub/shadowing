@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --size: 300;
+  --radius: 10;
+  --unit: 1px;
+  --color: #eee;
+  --distance: 5;
+  --blur: 10;
+}
+
+.card-preview {
+  width: calc(var(--size) * var(--unit));
+  height: calc(var(--size) * var(--unit));
+  border-radius: calc(var(--radius) * var(--unit));
+  box-shadow: calc(var(--distance) * var(--unit)) calc(var(--distance) * var(--unit))
+    calc(var(--blur) * var(--unit)) var(--color); /* x y blur color */
+}
+
+.form-label {
+  @apply text-sm font-bold mb-2 block;
+}
+.form-group {
+  @apply mb-4;
+}
