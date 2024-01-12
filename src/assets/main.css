@@ -32,3 +32,16 @@
 .border-radius-base {
   border-radius: var(--border-radius);
 }
+
+.btn-icon {
+  @apply px-2 py-1 rounded-md bg-white shadow-md border text-xs;
+}
+.icon-copy::before {
+  content: 'Copy 📋';
+}
+.icon-copy.success {
+  @apply bg-green-400 border-green-500;
+}
+.icon-copy.success::before {
+  content: 'Success 🎉';
+}
