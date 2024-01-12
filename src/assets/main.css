@@ -6,7 +6,7 @@
   --size: 300;
   --radius: 10;
   --unit: 1px;
-  --color: #eee;
+  --color: #eeeeee;
   --distance: 5;
   --blur: 10;
 }
@@ -20,7 +20,7 @@
 }
 
 .form-label {
-  @apply text-sm font-bold mb-2 block;
+  @apply text-sm font-bold mb-1 block;
 }
 .form-group {
   @apply mb-4;

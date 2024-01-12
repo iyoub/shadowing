@@ -1,67 +1,54 @@
 <template>
-  <div class="border p-4">
-    <div class="form-group">
-      <label for="cardSize" class="form-label">Size</label>
-      <input
-        type="range"
-        min="50"
-        max="300"
-        id="cardSize"
-        :value="styles.size"
-        @input="updateStyle('size', ($event.target as HTMLInputElement).value)"
-      />
-    </div>
-    <div class="form-group">
-      <label for="cardRadius" class="form-label">Radius</label>
-      <input
-        type="range"
-        min="0"
-        max="200"
-        id="cardRadius"
-        :value="styles.radius"
-        @input="updateStyle('radius', ($event.target as HTMLInputElement).value)"
-      />
-    </div>
-    <div class="form-group">
-      <label for="cardShadowColor" class="form-label">Shadow color</label>
-      <input
-        id="cardShadowColor"
+  <div class="p-4">
+    <FormItem
+      label="Size"
+      :value="styles.size"
+      :min="50"
+      :max="300"
+      type="range"
+      @changeInput="updateStyle('size', $event)"
+    />
+
+    <FormItem
+      label="Radius"
+      :value="styles.radius"
+      :min="0"
+      :max="200"
+      type="range"
+      @changeInput="updateStyle('radius', $event)"
+    />
+
+    <div class="flex items-end gap-3">
+      <FormItem
+        label="Color"
+        :value="styles.color"
         type="color"
-        :value="styles.color"
-        @input="updateStyle('color', ($event.target as HTMLInputElement).value)"
+        @changeInput="updateStyle('color', $event)"
       />
-      <input
-        type="text"
-        id="cardShadowColorText"
-        :value="styles.color"
-        @input="updateStyle('color', ($event.target as HTMLInputElement).value)"
-      />
+      <FormItem :value="styles.color" type="text" @changeInput="updateStyle('color', $event)" />
     </div>
-    <div class="form-group">
-      <label for="cardDistance" class="form-label">Distance</label>
-      <input
-        type="range"
-        min="2"
-        max="60"
-        id="cardDistance"
-        :value="styles.distance"
-        @input="updateStyle('distance', ($event.target as HTMLInputElement).value)"
-      />
-    </div>
-    <div class="form-group">
-      <label for="cardBlur" class="form-label">Blur</label>
-      <input
-        type="range"
-        min="0"
-        max="100"
-        id="cardBlur"
-        :value="styles.blur"
-        @input="updateStyle('blur', ($event.target as HTMLInputElement).value)"
-      />
-    </div>
+
+    <FormItem
+      label="Distance"
+      :value="styles.distance"
+      :min="-50"
+      :max="50"
+      type="range"
+      @changeInput="updateStyle('distance', $event)"
+    />
+
+    <FormItem
+      label="Blur"
+      :value="styles.blur"
+      :min="0"
+      :max="100"
+      type="range"
+      @changeInput="updateStyle('blur', $event)"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
 import { styles, updateStyle } from '@/states/styles'
+import FormItem from './FormItem.vue'
 </script>

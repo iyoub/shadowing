@@ -1,7 +1,9 @@
 <template>
-  <div class="border p-4">
+  <div class="border text-xs p-2">
     <pre>
-      <code>{{ styles }}</code>
+.card-preview {
+  border-radius: {{ styles.radius }}px;
+}
     </pre>
   </div>
 </template>
