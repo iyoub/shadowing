@@ -8,8 +8,8 @@ export const RANGE_VALUES = {
 		max: 200,
 	},
 	distance: {
-		min: -50,
-		max: 50,
+		min: 0,
+		max: 60,
 	},
 	blur: {
 		min: 0,

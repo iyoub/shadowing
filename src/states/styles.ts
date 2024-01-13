@@ -12,6 +12,10 @@ export interface Styles {
 // code is a string
 type Code = string;
 
+// activeAngle is a string
+type ActiveAngle = 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left';
+
+
 // getting the initial values from the root css variables
 export const styles = ref<Styles>({
 	color: getComputedStyle(document.documentElement).getPropertyValue('--color'),
@@ -30,6 +34,8 @@ const generateCode = () => {
 // generating the initial code
 export const code = ref<Code>(generateCode());
 
+export const activeAngle = ref<ActiveAngle>('top-left');
+
 export const updateStyle = (key: keyof Styles, value: string) => {
 	// updating the root css variables
 	document.documentElement.style.setProperty(`--${key}`, value);
@@ -39,3 +45,11 @@ export const updateStyle = (key: keyof Styles, value: string) => {
 	code.value = generateCode();
 }
 
+export const updateActiveAngle = (value: ActiveAngle) => {
+	activeAngle.value = value;
+	// reset and add the class to the html
+	document.documentElement.classList.remove('top-right', 'top-left', 'bottom-right', 'bottom-left');
+	document.documentElement.classList.add(value);
+	// updating the code
+	code.value = generateCode();	
+}

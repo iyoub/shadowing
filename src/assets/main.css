@@ -5,15 +5,15 @@
 @tailwind utilities;
 
 :root {
-  --size: 300;
+  --size: 200;
   --radius: 10;
   --unit: 1px;
   --color: #eeeeee;
-  --distance: 5;
+  --distance: 18;
   --blur: 10;
-  --box-shadow: calc(var(--distance) * var(--unit)) calc(var(--distance) * var(--unit))
-    calc(var(--blur) * var(--unit)) var(--color); /* x y blur color */
   --border-radius: calc(var(--radius) * var(--unit));
+  /* prettier-ignore */
+  --box-shadow: calc(var(--distance) * var(--unit)) calc(var(--distance) * var(--unit)) calc(var(--blur) * var(--unit)) var(--color); /* x y blur color */
 }
 
 .card {
@@ -22,15 +22,40 @@
 .card-preview {
   width: calc(var(--size) * var(--unit));
   height: calc(var(--size) * var(--unit));
-  box-shadow: var(--box-shadow);
-  border-radius: var(--border-radius);
 }
-
+.card-preview,
 .box-shadow-base {
   box-shadow: var(--box-shadow);
 }
+.card-preview,
 .border-radius-base {
   border-radius: var(--border-radius);
+}
+
+/* manipulating the box shadown angle depending on the claases */
+:root.top-left {
+  /* prettier-ignore */
+  /* x y blur color */
+  --box-shadow: calc(var(--distance) * var(--unit)) calc(var(--distance) * var(--unit))
+    calc(var(--blur) * var(--unit)) var(--color);
+}
+:root.top-right {
+  /* prettier-ignore */
+  /* -x y blur color */
+  --box-shadow: calc(calc(var(--distance) * var(--unit)) * -1) calc(var(--distance) * var(--unit))
+    calc(var(--blur) * var(--unit)) var(--color);
+}
+:root.bottom-left {
+  /* prettier-ignore */
+  /* x -y blur color */
+  --box-shadow: calc(var(--distance) * var(--unit)) calc(calc(var(--distance) * var(--unit)) * -1)
+    calc(var(--blur) * var(--unit)) var(--color);
+}
+:root.bottom-right {
+  /* prettier-ignore */
+  /* -x -y blur color */
+  --box-shadow: calc(calc(var(--distance) * var(--unit)) * -1)
+    calc(calc(var(--distance) * var(--unit)) * -1) calc(var(--blur) * var(--unit)) var(--color);
 }
 
 .btn-icon {

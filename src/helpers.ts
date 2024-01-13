@@ -26,6 +26,14 @@ const calculateCalcValues = (style: string) => {
 
   calcMatches.forEach((match) => {
     const calcValue = match.replace('calc(', '').replace(')', '')
+    // if calcValue stil has calc inside
+    if (calcValue.includes('calc')) {
+      const calcResult = calculateCalcValues(calcValue)
+      style = style.replace(match, calcResult)
+      return
+    }
+    
+    
     const calcValueWihoutPx = calcValue.replace(/px/g, '')
     const calcResult = eval(calcValueWihoutPx)
 
