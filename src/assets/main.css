@@ -9,8 +9,8 @@
   --radius: 10;
   --unit: 1px;
   --color: #eeeeee;
-  --distance: 18;
-  --blur: 10;
+  --distance: 10;
+  --blur: 18;
   --border-radius: calc(var(--radius) * var(--unit));
   /* prettier-ignore */
   --box-shadow: calc(var(--distance) * var(--unit)) calc(var(--distance) * var(--unit)) calc(var(--blur) * var(--unit)) var(--color); /* x y blur color */
@@ -25,6 +25,7 @@
 }
 .card-preview,
 .box-shadow-base {
+  transition: all 0.3s ease-in;
   box-shadow: var(--box-shadow);
 }
 .card-preview,

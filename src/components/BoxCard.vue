@@ -6,7 +6,7 @@
       title="Set active angle"
       @click="updateActiveAngle('top-left')"
     >
-      <IconBulb :fill="isAngleActive('top-left') ? 'yellow' : 'white'" />
+      <IconBulb :fill="isAngleActive('top-left') ? '#ffeb3b' : '#FAFAFA'" />
     </button>
     <button
       class="absolute top-0 right-0 rotate-[220deg]"
@@ -14,7 +14,7 @@
       title="Set active angle"
       @click="updateActiveAngle('top-right')"
     >
-      <IconBulb :fill="isAngleActive('top-right') ? 'yellow' : 'white'" />
+      <IconBulb :fill="isAngleActive('top-right') ? '#ffeb3b' : '#FAFAFA'" />
     </button>
     <button
       class="absolute bottom-0 left-0 rotate-[40deg]"
@@ -22,7 +22,7 @@
       title="Set active angle"
       @click="updateActiveAngle('bottom-left')"
     >
-      <IconBulb :fill="isAngleActive('bottom-left') ? 'yellow' : 'white'" />
+      <IconBulb :fill="isAngleActive('bottom-left') ? '#ffeb3b' : '#FAFAFA'" />
     </button>
     <button
       class="absolute bottom-0 right-0 rotate-[320deg]"
@@ -30,7 +30,7 @@
       title="Set active angle"
       @click="updateActiveAngle('bottom-right')"
     >
-      <IconBulb :fill="isAngleActive('bottom-right') ? 'yellow' : 'white'" />
+      <IconBulb :fill="isAngleActive('bottom-right') ? '#ffeb3b' : '#FAFAFA'" />
     </button>
 
     <div class="card-preview flex items-center justify-center">
