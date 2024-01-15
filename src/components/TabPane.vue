@@ -1,0 +1,47 @@
+<template>
+  <div>
+    <nav class="text-xs font-semibold text-center text-gray-500">
+      <ul class="flex flex-wrap gap-1">
+        <li v-for="(tab, index) in props.tabs" :key="index">
+          <a
+            href="#!"
+            class="inline-block px-4 py-2 -mb-px border border-b-white border-gray-200 rounded-t-lg"
+            aria-current="page"
+            :class="activeTab === index ? 'bg-white ' : 'bg-gray-100'"
+            @click.prevent="changeTab(index)"
+          >
+            {{ tab.label }}
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="pt-6 border-t border-gray-200">
+      <slot :name="activeTabSlot" />
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { computed, defineProps, ref } from 'vue'
+
+type Tab = {
+  label: string
+  slot?: string
+  disabled?: boolean
+}
+
+const props = defineProps({
+  tabs: {
+    type: Array as () => Tab[],
+    required: true
+  }
+})
+
+const activeTab = ref(0)
+const activeTabSlot = computed(() => props.tabs[activeTab.value].slot)
+
+const changeTab = (index: number) => {
+  if (props.tabs[index].disabled) return
+  activeTab.value = index
+}
+</script>
