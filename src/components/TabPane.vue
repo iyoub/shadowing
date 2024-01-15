@@ -1,13 +1,13 @@
 <template>
   <div>
-    <nav class="text-xs font-semibold text-center text-gray-500">
-      <ul class="flex flex-wrap gap-1">
+    <nav class="text-sm font-semibold text-center text-gray-700 border-b border-gray-200">
+      <ul class="flex flex-wrap gap-1 -mb-px">
         <li v-for="(tab, index) in props.tabs" :key="index">
           <a
             href="#!"
-            class="inline-block px-4 py-2 -mb-px border border-b-white border-gray-200 rounded-t-lg"
+            class="inline-block px-4 py-2 border border-gray-200 !border-b-0 rounded-t-lg"
             aria-current="page"
-            :class="activeTab === index ? 'bg-white ' : 'bg-gray-100'"
+            :class="activeTab === index ? 'bg-white border-b-white' : 'bg-gray-100/80'"
             @click.prevent="changeTab(index)"
           >
             {{ tab.label }}
@@ -15,7 +15,7 @@
         </li>
       </ul>
     </nav>
-    <div class="pt-6 border-t border-gray-200">
+    <div class="pt-3">
       <slot :name="activeTabSlot" />
     </div>
   </div>
