@@ -72,3 +72,10 @@
 .icon-copy.success::before {
   content: 'Success 🎉';
 }
+
+.title {
+  @apply text-3xl font-bold mb-2;
+}
+.subtitle {
+  @apply text-gray-600;
+}
