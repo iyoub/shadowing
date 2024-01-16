@@ -1,0 +1,97 @@
+/* buttons abd icons */
+.btn-icon {
+  @apply px-2 py-1 rounded-md bg-white shadow-md border text-xs;
+}
+.icon-copy::before {
+  content: 'Copy 📋';
+}
+.icon-copy.success {
+  @apply bg-green-400 border-green-500;
+}
+.icon-copy.success::before {
+  content: 'Success 🎉';
+}
+
+/* Typo */
+.title {
+  @apply text-3xl font-bold mb-2 text-slate-700;
+}
+.subtitle {
+  @apply text-slate-500;
+}
+
+/* layout and shadows */
+.bulb-shadow {
+  transition: all 0.2s ease-in;
+  box-shadow: 0 0 35px 0px #ffee58;
+  border-radius: 99px;
+}
+
+.page-container {
+  @apply container mx-auto px-6;
+}
+
+/* animations and transitions */
+.animate-underline {
+  --underline-width: 3px;
+  --underline-block-width: 40px;
+  --underline-color: #0476bd;
+  color: inherit;
+  text-decoration: none;
+  padding-bottom: 5px;
+  background-image: linear-gradient(90deg, #fff, #fff),
+    linear-gradient(90deg, var(--underline-color), var(--underline-color));
+  background-size:
+    var(--underline-block-width) var(--underline-width),
+    100% var(--underline-width);
+  background-repeat: no-repeat;
+  background-position-x: calc(var(--underline-block-width) * -1), 0;
+  background-position-y: 100%;
+  -webkit-transition:
+    background-position-x 300ms ease-out,
+    color 300ms ease-in-out;
+  -o-transition:
+    background-position-x 300ms ease-out,
+    color 300ms ease-in-out;
+  transition:
+    background-position-x 300ms ease-out,
+    color 300ms ease-in-out;
+}
+
+.animate-underline:hover {
+  color: var(--underline-color);
+  text-decoration: none;
+  background-position-x: calc(100% + var(--underline-block-width) + 2px), 0;
+}
+
+.animate-text {
+  --overlay-color: #cecece;
+  background: linear-gradient(
+    105deg,
+    #475569 46%,
+    var(--overlay-color) 49%,
+    var(--overlay-color) 50%,
+    var(--overlay-color) 51%,
+    #475569 54%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #475569;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-color-position 5s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
+  display: inline-block;
+}
+
+@keyframes text-color-position {
+  0% {
+    background-position: 120% 0%;
+  }
+  70%,
+  100% {
+    background-position: -20% 0%;
+  }
+}

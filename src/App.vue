@@ -1,9 +1,8 @@
 <template>
-  <main class="min-h-screen bg-neutral-100/10 flex">
-    <div class="container mx-auto px-6 flex flex-col">
-      <NavBar />
-
-      <section class="my-10">
+  <main class="min-h-screen bg-neutral-100/10 flex flex-col">
+    <NavBar />
+    <div class="page-container flex flex-col">
+      <section class="my-12" id="create">
         <div class="grid sm:grid-cols-2 grid-cols-1 gap-12 mb-12">
           <BoxCard />
           <ControlsCard />
@@ -13,10 +12,11 @@
         </div>
       </section>
 
-      <section class="my-10">
+      <section class="my-12" id="presets">
         <ShadowPresets />
       </section>
     </div>
+    <Footer />
   </main>
 </template>
 
@@ -27,4 +27,5 @@ import HighlightCode from './components/HighlightCode.vue'
 import NavBar from './components/NavBar.vue'
 import { code } from './states/styles'
 import ShadowPresets from './components/ShadowPresets.vue'
+import Footer from './components/Footer.vue'
 </script>
