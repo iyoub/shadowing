@@ -1,5 +1,5 @@
 <template>
-  <main class="min-h-screen bg-neutral-100/20 flex">
+  <main class="min-h-screen bg-neutral-100/10 flex">
     <div class="container mx-auto px-6 flex flex-col">
       <NavBar />
 

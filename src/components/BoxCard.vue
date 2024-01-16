@@ -1,7 +1,8 @@
 <template>
-  <div class="p-6 flex items-center self-center mx-auto h-fit w-fit relative">
+  <div class="p-6 flex items-center self-center mx-auto h-fit w-fit relative bg-white">
     <button
       class="absolute top-0 left-0 rotate-[140deg]"
+      :class="{ 'bulb-shadow': isAngleActive('top-left') }"
       aria-label="Set active angle"
       title="Set active angle"
       @click="updateActiveAngle('top-left')"
@@ -10,6 +11,7 @@
     </button>
     <button
       class="absolute top-0 right-0 rotate-[220deg]"
+      :class="{ 'bulb-shadow': isAngleActive('top-right') }"
       aria-label="Set active angle"
       title="Set active angle"
       @click="updateActiveAngle('top-right')"
@@ -18,6 +20,7 @@
     </button>
     <button
       class="absolute bottom-0 left-0 rotate-[40deg]"
+      :class="{ 'bulb-shadow': isAngleActive('bottom-left') }"
       aria-label="Set active angle"
       title="Set active angle"
       @click="updateActiveAngle('bottom-left')"
@@ -26,6 +29,7 @@
     </button>
     <button
       class="absolute bottom-0 right-0 rotate-[320deg]"
+      :class="{ 'bulb-shadow': isAngleActive('bottom-right') }"
       aria-label="Set active angle"
       title="Set active angle"
       @click="updateActiveAngle('bottom-right')"

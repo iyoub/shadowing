@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 :root {
-  --size: 200;
+  --size: 300;
   --radius: 10;
   --unit: 1px;
   --color: #eeeeee;
@@ -78,4 +78,14 @@
 }
 .subtitle {
   @apply text-gray-600;
+}
+
+pre code.hljs {
+  white-space: pre-wrap;
+}
+
+.bulb-shadow {
+  transition: all 0.2s ease-in;
+  box-shadow: 0 0 35px 0px #ffee58;
+  border-radius: 99px;
 }
