@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="text-sm font-semibold text-center text-gray-700 border-b border-gray-200">
+    <nav class="text-sm font-semibold text-center text-gray-700">
       <ul class="flex flex-wrap gap-1 -mb-px">
         <li v-for="(tab, index) in props.tabs" :key="index">
           <a
@@ -15,7 +15,7 @@
         </li>
       </ul>
     </nav>
-    <div class="pt-3">
+    <div class="pt-2">
       <slot :name="activeTabSlot" />
     </div>
   </div>
