@@ -29,12 +29,15 @@ export const SHADOW_PRESETS = [
 		shadow: '5px 8px 20px 0px #f2f2f2, 10px 8px 10px 0px #f2f2f2'
 	},
 	{
-		shadow: '-10px 8px 15px 0px #fcfcfc, 5px 5px 10px 0px #fcfcfc, 10px 10px 20px 0px #e6e6e6'
+		shadow: '0px 7px 12px 3px #f1f1f1, 0px 6px 5px 0px #e6e6e6'
 	},
 	{
-		shadow: '15px 8px 15px 0px #f2f2f2, -10px 8px 20px 0px #f2f2f2, -5px 4px 10px 0px #e6e6e6'
+		shadow: '0px 5px 7px 0px #fcfbfb, 0px 6px 5px 0px #efeded'
 	},
-		{
+	{
+		shadow: '-4px 4px 10px 4px #eae7e7, -7px 7px 0px 0px #f2f2f2'
+	},
+	{
 		shadow: 'inset 0px 0px 4px 2px #e6e6e6, inset 0px 0px 4px 2px #e6e6e6'
 	},
 	{

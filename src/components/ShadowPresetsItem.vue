@@ -3,7 +3,7 @@
     <template #preview>
       <div class="card-preset-preview">
         <div
-          class="w-32 h-32 rounded-lg flex items-center justify-center cursor-pointer transition duration-200 ease-in-out scale-100 hover:scale-95"
+          class="w-32 h-32 rounded-lg flex items-center justify-center cursor-pointer"
           :style="`box-shadow: ${props.preset.shadow};`"
           @click="copyCode"
         >
