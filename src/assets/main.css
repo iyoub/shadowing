@@ -35,6 +35,10 @@
   border-radius: var(--border-radius);
 }
 
+.card-preset-preview {
+  @apply bg-white rounded shadow p-6 min-h-60 flex items-center justify-center h-full;
+}
+
 /* manipulating the box shadown angle depending on the claases */
 :root.top-left {
   /* prettier-ignore */
